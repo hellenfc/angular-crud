@@ -15,7 +15,7 @@ export class CategoryListComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private router: Router,
-    private user: UserService
+    public user: UserService
 
   ) { }
 

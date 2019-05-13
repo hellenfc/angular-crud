@@ -12,7 +12,7 @@ export class CategoryComponent implements OnInit {
 
   constructor(
     private data: DataService,
-    private user: UserService,
+    public user: UserService,
 
   ) { }
 

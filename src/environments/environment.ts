@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://frozen-wildwood-66939.herokuapp.com'
+  apiUrl: 'http://localhost:4006'
 };
 
 /*
