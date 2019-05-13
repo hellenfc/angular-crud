@@ -1,0 +1,24 @@
+
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <th>{{ user.id }}</th>
+      <td>{{ user.username }}</td>
+      <td>{{ user.password }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+        <a class="button is-primary is-outlined" (click)="editUser(user.id)">Edit</a>
+        <a class="button is-danger is-outlined" (click)="deleteUser(user.id)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

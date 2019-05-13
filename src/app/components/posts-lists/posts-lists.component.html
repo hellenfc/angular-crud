@@ -1,0 +1,25 @@
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Categories</th>
+      <th *ngIf="!(user.getUserRol() === 'Viewer')">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <th>{{ post.id }}</th>
+      <td>{{ post.title }}</td>
+      <td>{{ post.text }}</td>
+      <td>
+        <span class="tag is-info" *ngFor="let category of post.categories"><a class="tag-link">{{ category.name }} </a></span>
+      </td>
+      <td *ngIf="!(user.getUserRol() === 'Viewer')">
+        <a class="button is-primary is-outlined" (click)="editPost(post.id)">Edit</a>
+        <a class="button is-danger is-outlined" (click)="deletePost(post.id)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

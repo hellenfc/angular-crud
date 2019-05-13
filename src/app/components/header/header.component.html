@@ -1,0 +1,18 @@
+<nav class="navbar is-link">
+  <!-- logo -->
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="https://www.laureate.net/~/media/Images/LGG/Logos/footer_liu_190.ashx">
+    </a>
+  </div>
+  <div class="navbar-menu" *ngIf="user.isLoggedIn()">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="">Posts</a>
+      <a class="navbar-item" routerLink="category">Categories</a>
+      <a class="navbar-item" routerLink="user" *ngIf="user.getUserRol() === 'Admin'">Users</a>
+    </div>
+    <div class="navbar-end">
+        <button class="navbar-item" class="button is-info" (click)="signout()" >Logout</button>
+    </div>
+  </div>
+</nav>

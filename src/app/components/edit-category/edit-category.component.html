@@ -1,0 +1,17 @@
+<section class="section">
+    <div class="container">
+      <h1 class="title">Updating Category #{{ categoryId }}</h1>
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Text input" formControlName="name" [ngClass]="{ 'is-danger': submitted && f.name.errors }">
+          </div>
+          <p class="help is-danger" *ngIf="submitted && f.name.errors">Category Name is required</p>
+        </div>
+        <div class="container">
+            <button type="submit" class="button is-info">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>

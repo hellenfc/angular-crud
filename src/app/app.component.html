@@ -1,0 +1,16 @@
+<!-- header -->
+<app-header></app-header>
+<section class="hero is-light is-small  is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">{{title}}</h1>
+        </div>
+    </div>
+</section>
+
+
+<!-- routes will be rendered here -->
+<router-outlet (titleEvent)="titleEventHandler($event)"></router-outlet>
+
+<!-- footer -->
+<app-footer></app-footer>

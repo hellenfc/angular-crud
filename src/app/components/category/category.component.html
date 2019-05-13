@@ -1,0 +1,6 @@
+<section class="section">
+    <div class="container" *ngIf="!(user.getUserRol() === 'Viewer')">
+      <a class="button is-success" routerLink="add-category">Add Category</a>
+    </div>
+  </section >
+  <app-category-list></app-category-list>

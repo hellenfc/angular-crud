@@ -1,0 +1,37 @@
+<section class="section">
+    <div class="container">
+      <h1 class="title">Updating User #{{ userId }}</h1>
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Text input" formControlName="username" [ngClass]="{ 'is-danger': submitted && f.username.errors }">
+          </div>
+          <p class="help is-danger" *ngIf="submitted && f.username.errors">Username is required</p>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Text input" formControlName="password" [ngClass]="{ 'is-danger': submitted && f.password.errors }">
+          </div>
+          <p class="help is-danger" *ngIf="submitted && f.password.errors">Password is required</p>
+        </div>
+        <div class="field">
+          <label class="label">Role</label>
+          <div class="control has-icons-left has-icons-right">
+            <div class="select is-multiple" [ngClass]="{ 'is-danger': submitted && f.role.errors }">
+              <select formControlName="role">
+                <option>Admin</option>
+                <option>Editor</option>
+                <option>Viewer</option>
+              </select>
+            </div>
+          </div>
+          <p class="help is-danger" *ngIf="submitted && f.role.errors">Select a Role</p>
+        </div>
+        <div class="container">
+            <button type="submit" class="button is-info">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>

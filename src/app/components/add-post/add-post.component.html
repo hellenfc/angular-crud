@@ -1,0 +1,35 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">Add a new Post</h1>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <label class="label">Title</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input" type="text" placeholder="Text input" formControlName="title" [ngClass]="{ 'is-danger': submitted && f.title.errors }">
+        </div>
+        <p class="help is-danger" *ngIf="submitted && f.title.errors">Title is required</p>
+      </div>
+      <div class="field">
+        <label class="label">Text</label>
+        <div class="control has-icons-left has-icons-right">
+          <textarea class="textarea" placeholder="e.g. Hello world" formControlName="text" [ngClass]="{ 'is-danger': submitted && f.text.errors }"></textarea>
+        </div>
+        <p class="help is-danger" *ngIf="submitted && f.text.errors">Text is required</p>
+      </div>
+      <div class="field">
+        <label class="label">Categories</label>
+        <div class="control has-icons-left has-icons-right">
+          <div class="select is-multiple" [ngClass]="{ 'is-danger': submitted && f.categories.errors }">
+            <select multiple formControlName="categories">
+              <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+          </div>
+        </div>
+        <p class="help is-danger" *ngIf="submitted && f.categories.errors">Select at least one category</p>
+      </div>
+      <div class="container">
+          <button type="submit" class="button is-info">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
